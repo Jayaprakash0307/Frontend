@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        background-color: hsla(0, 0%, 0%, 0.137);
+    }
+    h1{
+        color: hsla(237, 100%, 50%, 0.823);
+    }
+    form{
+        background-color: aquamarine;
+        text-align: center;
+        padding: 10px;
+        margin: 200px 100px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.232);
+    }
+    #textbox{
+        padding: 5px;
+        margin: 5px;
+    }
+    label{
+        font-weight: bold;
+    }
+    #mysubmit{
+        font-size: large;
+        margin-top: 20px;
+        padding: 7px;
+        background-color: hsla(0, 100%, 50%, 0.792);
+        color: rgb(255, 255, 255);
+    }
+    #mysubmit:hover{
+        background-color: hsla(0, 100%, 50%, 0.368);
+    }
+</style>
+<body>
+    <form>
+    <h1>Temperature Converter</h1>
+    <input type="number" id="textbox"><br>
+    <input type="radio" id="tocelsius" name="conversion">
+    <label> Farenheit to celsuis</label><br>
+    <input type="radio" id="tofarenheit" name="conversion">
+    <label>Celsius to Farenheit</label><br>
+    <button id="mysubmit" type="submit" onclick="convert(event)">Submit</button>
+    <h2 id="result"></h2>
+     </form>
+</body> 
+<script>
+    const textbox = document.getElementById("textbox");
+    const tocelsius = document.getElementById("tocelsius");
+    const tofarenheit = document.getElementById("tofarenheit");
+    const mysubmit=document.getElementById("mysubmit");
+    const result = document.getElementById("result");
+    let temp;
+     function convert(event){
+        event.preventDefault();
+       if(tocelsius.checked){
+        temp = Number(textbox.value);
+        temp = (temp - 32) * (5/9);
+        result.textContent = temp.toFixed(1) + "C"
+       }
+       else if(tofarenheit.checked){
+        temp = Number(textbox.value);
+        temp = temp * 9/5 + 32;
+        result.textContent = temp.toFixed(1) + "F"
+       }
+       else{
+        result.textContent="Select a Unit";
+       }
+    }
+</script>
+</html>

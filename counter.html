@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: hsla(208, 100%, 97%, 0.805);
+        display: contents;
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        color: rgba(0, 0, 255, 0.647);
+        font-size: 10em;
+    }
+    .containter{
+        display: flex;
+    }
+    button{
+        margin: 10px;
+        padding: 5px;
+        background-color: rgba(0, 242, 255, 0.786);
+        color:black;
+        font-weight: bold;
+    }
+    button:hover{
+        background-color: #00ffff9d;
+    }
+</style>
+<body>
+    <h1 id="main">0</h1>
+    <div id="container" class="container">
+    <button id="decreasebtn">Decrease</button>
+    <button id="resetbtn">reset</button>
+    <button id="increasebtn">Increase</button>
+    </div>
+</body>
+<script>
+    let count = 0;
+    document.getElementById("decreasebtn").onclick = function(){
+     count--;
+     document.getElementById("main").textContent = count;
+    }
+    document.getElementById("resetbtn").onclick = function(){
+       count=0;
+     document.getElementById("main").textContent = count; 
+    }
+    document.getElementById("increasebtn").onclick = function(){
+        count++;
+     document.getElementById("main").textContent = count;
+    }
+</script>
+</html>

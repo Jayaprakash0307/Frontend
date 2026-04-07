@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECE Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h2, h3, p {
+            margin: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .lunch {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-weight: bold;
+        }
+        .section-title {
+            text-align: left;
+            font-weight: bold;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</h2>
+    <h3>TIME TABLE (Academic Year 2025-26)</h3>
+    <h3>III B.Tech I Semester - Section 'D'</h3>
+    <p><b>Room No: 7304</b> &nbsp;&nbsp;&nbsp; w.e.f: 14-07-2025</p>
+
+    <!-- Timetable -->
+    <table>
+        <tr>
+            <th>Period & Day</th>
+            <th>1<br>09:15 - 10:15</th>
+            <th>2<br>10:15 - 11:15</th>
+            <th>3<br>11:15 - 12:15</th>
+            <th>4<br>12:15 - 01:15</th>
+            <th class="lunch" rowspan="7">LUNCH BREAK</th>
+            <th>5<br>02:15 - 03:15</th>
+            <th>6<br>03:15 - 04:15</th>
+        </tr>
+        <tr>
+            <th>Mon</th>
+            <td colspan="2">PCB LAB</td>
+            <td>CAO</td>
+            <td></td>
+            <td>ENVC</td>
+            <td>ADICA</td>
+            <td>MPMC</td>
+        </tr>
+        <tr>
+            <th>Tue</th>
+            <td>ENVC</td>
+            <td>QTA</td>
+            <td>AWP</td>
+            <td></td>
+            <td colspan="2">MPMC/ADIC LAB</td>
+        </tr>
+        <tr>
+            <th>Wed</th>
+            <td>CAO</td>
+            <td>AWP</td>
+            <td>ADICA</td>
+            <td></td>
+            <td colspan="2">CRT</td>
+        </tr>
+        <tr>
+            <th>Thu</th>
+            <td colspan="3">MPMC/ADIC LAB</td>
+            <td></td>
+            <td>MPMC</td>
+            <td>QTA</td>
+            <td>ADICA</td>
+        </tr>
+        <tr>
+            <th>Fri</th>
+            <td>AWP</td>
+            <td>QTA</td>
+            <td>ENVC</td>
+            <td></td>
+            <td>MPMC</td>
+            <td>CAO</td>
+            <td>AWP</td>
+        </tr>
+        <tr>
+            <th>Sat</th>
+            <td>CAO</td>
+            <td>ADICA</td>
+            <td>MPMC</td>
+            <td></td>
+            <td colspan="2">Club Activities</td>
+        </tr>
+    </table>
+
+    <!-- Course & Faculty Details -->
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Course</th>
+            <th>Name of the Faculty</th>
+            <th>Contact No.</th>
+        </tr>
+        <tr>
+            <td colspan="4" class="section-title">Theory:</td>
+        </tr>
+        <tr>
+            <td>EC23APC501</td>
+            <td>Analog and Digital IC Applications</td>
+            <td>Mr. M. Mahesh</td>
+            <td>9703933692</td>
+        </tr>
+        <tr>
+            <td>EC23APC502</td>
+            <td>Antennas and Wave Propagation</td>
+            <td>Mr. V. Mahesh</td>
+            <td>9791045765</td>
+        </tr>
+        <tr>
+            <td>EC23APC504</td>
+            <td>Microprocessors and Microcontrollers</td>
+            <td>Mr. TR. Revanth Kumar</td>
+            <td>9600256550</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="section-title">Open Elective – I:</td>
+        </tr>
+        <tr>
+            <td>BA23AOE501</td>
+            <td>Entrepreneurship and New Venture Creation</td>
+            <td>Mr. KR. Surendra</td>
+            <td>9676303826</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="section-title">Professional Elective – I:</td>
+        </tr>
+        <tr>
+            <td>EC23APE501</td>
+            <td>Computer Architecture and Organization</td>
+            <td>Mrs. M. Sharmila</td>
+            <td>8106149793</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="section-title">Labs:</td>
+        </tr>
+        <tr>
+            <td>EC23APC506</td>
+            <td>Analog and Digital IC Applications Lab</td>
+            <td>Mr. M. Mahesh / Mr. N. Gunasekhar Reddy</td>
+            <td>9703933692 / 9599454521</td>
+        </tr>
+        <tr>
+            <td>EC23APC507</td>
+            <td>Microprocessors and Microcontrollers Lab</td>
+            <td>Mr. TR. Revanth Kumar / Mrs. P. Bharathi</td>
+            <td>9600256550 / 9640326560</td>
+        </tr>
+        <tr>
+            <td>EC23ASC501</td>
+            <td>PCB Design and Prototype Development</td>
+            <td>Mr. R. Nanda Kumar / Mr. L. Mahesh</td>
+            <td>9963383515 / 6301591840</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="section-title">Mandatory Course:</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>Quantum Computing</td>
+            <td>Dr. P. Prathyusha</td>
+            <td>8919196848</td>
+        </tr>
+    </table>
+
+    <!-- Footer -->
+    <p><b>Year Incharge:</b> Dr. K. Upendra Raju (9849436315)</p>
+    <p><b>Class Teacher:</b> Mr. R. Nanda Kumar (9963383515)</p>
+
+</body>
+</html>
