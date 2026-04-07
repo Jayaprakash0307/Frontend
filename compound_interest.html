@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ---------- GLOBAL STYLES ---------- */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6dd5fa, #2980b9);
+            color: #222;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            animation: slideDown 1s ease;
+        }
+
+        /* ---------- CONTAINER ---------- */
+        #container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px 60px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: fadeInUp 1.2s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        /* ---------- LABELS & INPUTS ---------- */
+        label {
+            display: block;
+            text-align: left;
+            font-weight: 600;
+            margin: 15px 0 5px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 8px rgba(41,128,185,0.4);
+        }
+
+        /* ---------- BUTTON ---------- */
+        #mysubmit {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        #mysubmit:hover {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            box-shadow: 0 0 15px rgba(46,204,113,0.6);
+            transform: scale(1.05);
+        }
+
+        /* ---------- RESULT SECTION ---------- */
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #result {
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 10px;
+            transition: all 0.4s ease;
+        }
+
+        /* ---------- ANIMATIONS ---------- */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeInUp {
+            from {opacity: 0; transform: translateY(40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes slideDown {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>💰 Interest Calculator 💰</h1>
+        <div id="container">
+            <label for="pamount">Principal Amount:</label>
+            <input type="number" id="pamount" placeholder="Enter principal amount">
+
+            <label for="Interestrate">Interest Rate (% per month):</label>
+            <input type="number" id="Interestrate" placeholder="Enter rate">
+
+            <label for="months">Months:</label>
+            <input type="number" id="months" placeholder="Enter months">
+
+            <button type="button" id="mysubmit" onclick="calculateCompound()">Calculate</button>
+
+            <h2>Total:</h2>
+            <h2 id="result">--</h2>
+        </div>
+    </div>
+
+    <script>
+        function calculateCompound() {
+            const principal = Number(document.getElementById("pamount").value);
+            const rate = Number(document.getElementById("Interestrate").value);
+            const months = Number(document.getElementById("months").value);
+
+            if (!principal || !rate || !months) {
+                document.getElementById("result").textContent = "Please fill all fields!";
+                document.getElementById("result").style.color = "red";
+                return;
+            }
+
+            const total = principal + ((principal / 100) * rate * months);
+
+            const resultElem = document.getElementById("result");
+            resultElem.textContent = total.toFixed(2);
+            resultElem.style.color = "#27ae60";
+            resultElem.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                resultElem.style.transform = "scale(1)";
+            }, 400);
+        }
+    </script>
+</body>
+</html>
